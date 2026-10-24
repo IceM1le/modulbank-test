@@ -1,4 +1,4 @@
-"""Smoke test: verify PostgreSQL connection and a basic query."""
+"""Smoke test: проверка подключения к PostgreSQL и выполнения базового запроса."""
 
 import os
 
@@ -6,7 +6,10 @@ import psycopg
 
 
 def test_db_connection():
-    """Connect to the configured database and verify SELECT NOW()."""
+    """
+    Подключиться к настроенной базе данных и проверить выполнение запроса SELECT NOW(),
+    который возвращает текущие дату и время.
+    """
     connection = psycopg.connect(
         host=os.getenv("DB_HOST", "localhost"),
         port=int(os.getenv("DB_PORT", "5433")),
